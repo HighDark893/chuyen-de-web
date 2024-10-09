@@ -1,13 +1,12 @@
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
+import { ChakraProvider } from "@chakra-ui/react";
+import RootLayout from "./app/RootLayout";
 
 function App() {
-    return( 
-    <div className="App">
-        <Header/>
-        <Footer/>
-    </div>
-    );
+    return (
+        <ChakraProvider>
+            <RootLayout/>
+        </ChakraProvider>
+      )
 }
 
 export default App;
