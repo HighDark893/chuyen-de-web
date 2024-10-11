@@ -1,6 +1,6 @@
 import { Grid, GridItem, Spacer } from "@chakra-ui/react";
 import BlogContentLeft from "./BlogContentLeft";
-import BlogContentRight from "./BogContentRight";
+import BlogContentRight from "./BlogContentRight";
 
 const Main = () => {
     return (
