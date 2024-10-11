@@ -2,14 +2,16 @@ import { Grid, GridItem, Box, HStack, Button, IconButton, Text } from "@chakra-u
 import { AddIcon } from "@chakra-ui/icons";
 import { useEffect, useState } from "react";
 
-const BlogContentLeft = () => {
-    const [posts, setPosts] = useState([]);
+const rawPostData = require ('./../../data/posts.json')
 
-    useEffect(() => {
-        fetch("/public/posts.json")
-        .then(response => response.json())
-        .then(data => setPosts(data))
-    }, [])
+const BlogContentLeft = () => {
+    const [posts, setPosts] = useState(rawPostData);
+
+    // useEffect(() => {
+    //     fetch("/posts.json")
+    //     .then(response => response.json())
+    //     .then(data => setPosts(data))
+    // }, [])
     
     return (
         <Grid 
@@ -29,7 +31,7 @@ const BlogContentLeft = () => {
             {/* Content Section */}
             <GridItem>
                 <Box padding="4" pt="0" bg="white" shadow="md">
-                    {/* {posts.map((post, index) =>{
+                    {posts.map((post, index) =>{
                          return(
                             <Box key={index} py='5'>
                             <Text fontSize='lg'>
@@ -43,12 +45,25 @@ const BlogContentLeft = () => {
                             {index < post.length -1 && <hr/>}
                         </Box>
                         );  
-                    })}        */}
-                    <p>
+                    })}       
+                    {/* <p>
                         {posts.map((post) => {
                             return (<h1>{post.author}</h1>)
                         })}
-                    </p>
+                    </p> */}
+                    {/* {posts.length > 0 && posts.map((post, index) => (
+                        <Box key={index} py="5">
+                            <Text fontSize="lg">
+                                {post.author} {post.channel && `in ${post.channel}`}
+                            </Text>
+                            <Text fontSize="2xl">{post.title}</Text>
+                            <Text fontSize="lg">{post.subtitle}</Text>
+                            <Text fontSize="xs">
+                                {post.date} - {post.views} - {post.comments}
+                            </Text>
+                            {index < posts.length - 1 && <hr />}
+                        </Box>
+                    ))} */}
                 </Box>
             </GridItem>
         </Grid>
