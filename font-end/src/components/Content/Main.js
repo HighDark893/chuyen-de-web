@@ -11,13 +11,11 @@ const Main = () => {
             gap={20}
         >
             <GridItem area={'left'} marginLeft='5%'>
-                <BlogContentLeft>
-                </BlogContentLeft>
+                <BlogContentLeft/>
             </GridItem>
 
             <GridItem area={'right'}>
-                <BlogContentRight>
-                </BlogContentRight>
+                <BlogContentRight/>
             </GridItem>
         </Grid>
     )
