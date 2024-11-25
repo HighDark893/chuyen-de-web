@@ -1,6 +1,6 @@
 import { Grid, GridItem, Container } from "@chakra-ui/react";
 import NavBar from "../components/Header/Navbar";
-import NewStoryComponent from "../components/Content/NewStoryContent/NewStoryComponents";
+import NewStoryComponent from "../components/Content/NewStoryComponents";
 
 const NewStoryPage = () => {
     return (
