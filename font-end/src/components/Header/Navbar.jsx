@@ -8,7 +8,6 @@ import axios from "axios";
 
 const NavBar = () => {
     const [searchText, setSearchText] = useState('')
-    const [searchedBlog, setSearchedBlog] = useState([])
     const navigate = useNavigate()
 
     async function handleSearching() {
@@ -18,7 +17,9 @@ const NavBar = () => {
                     title: searchText
                 }
             });
-            setSearchedBlog(response.data)
+            navigate('/searchedStories', {
+                state: { blogs: response.data, searchText: searchText }
+            })
         } catch (error) {
             console.error(error.message);
         }

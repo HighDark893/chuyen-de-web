@@ -35,6 +35,24 @@ const BlogContentLeft = () => {
         }
     }
 
+    function handleMostViewPost(posts) {
+        try {
+            const mostViewPost = [...posts].sort((prev, after) => after.views - prev.views)
+            setPosts(mostViewPost)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    function handleNewestPost(posts) {
+        try {
+            const newestPost = [...posts].sort((prev, after) => new Date(after.createdAt) - new Date(prev.createdAt))
+            setPosts(newestPost)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
     return (
         <Grid
             templateRows="auto 1fr"
@@ -45,8 +63,8 @@ const BlogContentLeft = () => {
                 <Box display="flex" padding="4" bg="gray.100">
                     <HStack spacing="20px">
                         <IconButton icon={<AddIcon/>}/>
-                        <Button variant='link'> For you </Button>
-                        <Button variant='link'> Following </Button>
+                        <Button onClick={() => handleMostViewPost(posts)} variant='link'> For you </Button>
+                        <Button onClick={() => handleNewestPost(posts)} variant='link'> Newest </Button>
                     </HStack>
                 </Box>
             </GridItem>

@@ -23,7 +23,6 @@ const BlogDetailPage = () => {
     if (!detailPost) {
         return <Text>Post not found!</Text>;
     }
-    console.log(detailPost)
     return (
         <SimpleGrid>
             <NavBar/>
