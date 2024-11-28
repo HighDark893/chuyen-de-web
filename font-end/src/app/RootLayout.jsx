@@ -11,10 +11,10 @@ const RootLayout = () => {
             gap='2'
         >
             <GridItem area={'header'}>
-                <NavBar></NavBar>
+                <NavBar/>
             </GridItem>
             <GridItem area={'main'}>
-                <Main></Main>
+                <Main/>
             </GridItem>
         </Grid>
     )

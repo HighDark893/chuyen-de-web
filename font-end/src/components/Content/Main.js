@@ -1,6 +1,6 @@
 import { Grid, GridItem, Spacer } from "@chakra-ui/react";
 import BlogContentLeft from "./BlogContentLeft";
-import BlogContentRight from "./BogContentRight";
+import BlogContentRight from "./BlogContentRight";
 
 const Main = () => {
     return (
@@ -11,13 +11,11 @@ const Main = () => {
             gap={20}
         >
             <GridItem area={'left'} marginLeft='5%'>
-                <BlogContentLeft>
-                </BlogContentLeft>
+                <BlogContentLeft/>
             </GridItem>
 
             <GridItem area={'right'}>
-                <BlogContentRight>
-                </BlogContentRight>
+                <BlogContentRight/>
             </GridItem>
         </Grid>
     )
